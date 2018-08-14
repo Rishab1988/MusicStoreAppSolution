@@ -1,0 +1,40 @@
+﻿{
+  "Menu": {
+    "DisplayText": "Root",
+    "MenuComponents": [
+      {
+        "DisplayText": "Home",
+        "MenuComponentUrl": {
+          "Action": "Index",
+          "Controller": "Home",
+          "Parameters": [
+            {
+              "Parameter": "Order",
+              "Value": "One"
+            }
+          ]
+        }
+      },
+      {
+        "DisplayText": "Music",
+        "MenuComponents": [
+          {
+            "DisplayText": "Artist"
+          },
+          {
+            "DisplayText": "Album"
+          },
+          {
+            "DisplayText": "Genre"
+          }
+        ]
+      },
+      {
+        "DisplayText": "Videos"
+      },
+      {
+        "DisplayText": "Pictures"
+      }
+    ]
+  }
+}

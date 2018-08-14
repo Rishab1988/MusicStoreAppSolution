@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+
+}
+
+<h2>Inde</h2>
+
+@{
+    var data = string.Empty;
+}
+
+@foreach (var x in ViewData)
+{
+   
+        @Html.Raw(x.Key + " -- " + x.Value);
+        <text><br /></text>
+  
+}
