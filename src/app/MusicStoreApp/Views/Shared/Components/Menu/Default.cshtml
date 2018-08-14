@@ -25,6 +25,14 @@
             </tbody>
         </table>
 
+@if (User.Identity.IsAuthenticated)
+{
+    <tr>
+        <td>
+            <a asp-controller= "Home" asp-action="Logout">Logout</a>
+        </td>
+    </tr>
+}
 
 
 
@@ -32,4 +40,5 @@
 
 
 
-        
+
+

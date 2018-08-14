@@ -54,25 +54,25 @@ namespace MusicStoreApp
                     {
                         setupAction.ResourcesPath = "Resources";
                     });
-            services.AddMvc(
-             
-                    ).AddViewLocalization(
+
+                services.AddMvc().AddViewLocalization(
                 setupAction =>
                     {
                         setupAction.ResourcesPath = "Resources";
-                    }).AddDataAnnotationsLocalization(
+                    })
+                    .AddDataAnnotationsLocalization(
 
-                //options =>
-                //    {
-                //        options.DataAnnotationLocalizerProvider = (type, factory) =>
-                //            factory.Create(typeof(SharedResource));
-                //    }
+            //options =>
+            //    {
+            //        options.DataAnnotationLocalizerProvider = (type, factory) =>
+            //            factory.Create(typeof(SharedResource));
+            //    }
 
 
 
 
             );
-           
+
             services.Configure<AppMenuComponent>(_configuration.GetSection("Menu"));
             services.Configure<SqlConnectionConfig>(_configuration.GetSection("ConnectionStrings"));
             services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(
@@ -81,6 +81,7 @@ namespace MusicStoreApp
                         options.Cookie.Name = "MusicStoreApp";
                         options.LoginPath = "/Home/Login";
                         options.AccessDeniedPath = "/Home/Denied";
+                        options.ExpireTimeSpan = new TimeSpan(0, 0, 20);
                     }
                 );
             return AutoFacContainer.GetServiceProvider(services);
