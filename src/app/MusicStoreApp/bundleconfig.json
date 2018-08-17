@@ -1,0 +1,14 @@
+[
+  {
+    "outputFileName": "wwwroot/scripts/jquery.validate.unobtrusive.js",
+    "inputFiles": [
+      "node_modules/jquery/dist/jquery.js",
+      "node_modules/jquery-validation/dist/jquery.validate.js",
+      "node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"
+      //"node_modules/**/dist/jquery*.js",
+      //"!node_modules/**/dist/*.min.js",
+      //"!node_modules/**/dist/*.slim.js"
+    ],
+    "minify": { "enabled": true }, "sourceMap":  false
+  }
+]

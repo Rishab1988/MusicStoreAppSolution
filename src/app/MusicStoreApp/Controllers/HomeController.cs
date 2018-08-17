@@ -8,18 +8,14 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.Extensions.Options;
 using MusicStoreApp.Core;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authorization;
+using MusicStoreApp.ViewModels;
 
 namespace MusicStoreApp.Controllers
 {
-    using System.ComponentModel.DataAnnotations;
-    using System.Runtime.Serialization;
-    using System.Security.Claims;
-    using Microsoft.AspNetCore.Authentication;
-    using Microsoft.AspNetCore.Authentication.Cookies;
-    using Microsoft.AspNetCore.Authorization;
-
-    using MusicStoreApp.ViewModels;
-
     [Authorize]
     public class HomeController : Controller
     {
@@ -72,7 +68,7 @@ namespace MusicStoreApp.Controllers
 
             if (userLogin.UserName != "test" || userLogin.Password != "test")
             {
-                ModelState.AddModelError("InvalidUserNamePassword", "Either the user name or password is invalid");
+                ModelState.AddModelError("", "Either the user name or password is invalid");
                 return View(userLogin);
             }
 
